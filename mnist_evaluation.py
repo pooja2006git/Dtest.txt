@@ -16,7 +16,8 @@ import pandas as pd
 df_train,df_test = df_train/ 255.0, df_test / 255.0 #normailzation ,range of pixel[0-255], normalize it to [0-1]
 # building model
 model = tf.keras.models.Sequential([    #necessary before feeding to dense layer/the it works
-  tf.keras.layers.Flatten(input_shape=(28, 28)),#28x28 pixel to 1D array
+  tf.keras.layers.Flatten(input_shape=(28, 28)),
+  tf.keras.layers.Flatten(),#28x28 pixel to 1D array
   # dense or nn layer or fully connected neurons,activation fn(relu)(+-+,--0)
   tf.keras.layers.Dense(128, activation='relu'),
   tf.keras.layers.Dropout(0.2),#20% of neurons droped out
